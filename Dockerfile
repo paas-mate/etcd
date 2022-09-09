@@ -9,6 +9,7 @@ mkdir -p etcd && \
 tar -xf etcd-v3.5.4-linux-$TARGETARCH.tar.gz -C etcd --strip-components 1 && \
 rm -rf etcd-v3.5.4-linux-$TARGETARCH.tar.gz && \
 ln -s /opt/sh/etcd/etcd /usr/bin/etcd && \
-ln -s /opt/sh/etcd/etcdctl /usr/bin/etcdctl
+ln -s /opt/sh/etcd/etcdctl /usr/bin/etcdctl && \
+ln -s /opt/sh/etcd/etcdutl /usr/bin/etcdutl
 
 WORKDIR /opt/sh/etcd
