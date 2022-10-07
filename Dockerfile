@@ -13,3 +13,7 @@ ln -s /opt/sh/etcd/etcdctl /usr/bin/etcdctl && \
 ln -s /opt/sh/etcd/etcdutl /usr/bin/etcdutl
 
 WORKDIR /opt/sh/etcd
+
+EXPOSE 2379
+
+ENTRYPOINT [ "/usr/bin/etcd" ]
