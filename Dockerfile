@@ -1,6 +1,6 @@
-FROM ttbb/base
+FROM shoothzj/base
 
-ENV ETCD_HOME /opt/sh/etcd
+ENV ETCD_HOME /opt/etcd
 
 ARG TARGETARCH
 
@@ -8,11 +8,11 @@ RUN wget https://storage.googleapis.com/etcd/v3.5.5/etcd-v3.5.5-linux-$TARGETARC
 mkdir -p etcd && \
 tar -xf etcd-v3.5.5-linux-$TARGETARCH.tar.gz -C etcd --strip-components 1 && \
 rm -rf etcd-v3.5.5-linux-$TARGETARCH.tar.gz && \
-ln -s /opt/sh/etcd/etcd /usr/bin/etcd && \
-ln -s /opt/sh/etcd/etcdctl /usr/bin/etcdctl && \
-ln -s /opt/sh/etcd/etcdutl /usr/bin/etcdutl
+ln -s /opt/etcd/etcd /usr/bin/etcd && \
+ln -s /opt/etcd/etcdctl /usr/bin/etcdctl && \
+ln -s /opt/etcd/etcdutl /usr/bin/etcdutl
 
-WORKDIR /opt/sh/etcd
+WORKDIR /opt/etcd
 
 EXPOSE 2379
 
